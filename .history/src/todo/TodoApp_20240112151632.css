@@ -1,5 +1,7 @@
 label, input, button{
     margin: 10px;
     padding: 5px;
-    width: 200px;
+}
+input{
+    flex:1;
 }

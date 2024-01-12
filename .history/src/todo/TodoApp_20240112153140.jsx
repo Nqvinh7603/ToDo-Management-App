@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import "./TodoApp.css";
-import { BrowserRouter, Route, Router, Routes, useNavigate } from "react-router-dom";
+import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 function LoginComponent() {
   const [username, setUsername] = useState("user");
   const [password, setPassword] = useState("");
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(true);
-  const navigate = useNavigate();
-
   function handleUsernameChange(event) {
     setUsername(event.target.value);
   }
@@ -19,7 +17,6 @@ function LoginComponent() {
       console.log("Thanh cong");
       setShowSuccessMessage(true);
       setShowErrorMessage(false);
-      navigate('/welcome');
     } else {
       console.log("That bai");
       setShowErrorMessage(true);
@@ -85,9 +82,8 @@ const TodoApp = () => {
     <div className="TodoApp">
       <BrowserRouter>
         <Routes>
-        <Route path="/" element={<LoginComponent></LoginComponent>}></Route>
-          <Route path="/login" element = {<LoginComponent></LoginComponent>}></Route>
-          <Route path="/welcome" element = {<WelcomeComponent></WelcomeComponent>}></Route>
+          <Route path="" element = {<LoginComponent></LoginComponent>}></Route>
+          <Route path="" element = {<WelcomeComponent></WelcomeComponent>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

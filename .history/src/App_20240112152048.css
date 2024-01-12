@@ -1,0 +1,31 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+/* Add your global styles or imports here */
+
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure images and other embedded content do not overflow their containers */
+img, embed, object, video {
+  max-width: 100%;
+}
+
+/* Override default list styles */
+ul, ol {
+  list-style: none;
+}
+
+/* Reset anchor text decoration and color */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Add more resets or custom styles as needed */
