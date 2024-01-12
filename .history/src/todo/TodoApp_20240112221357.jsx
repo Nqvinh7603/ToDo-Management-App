@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./TodoApp.css";
-import { BrowserRouter, Route, Router, Routes, useNavigate, useParams } from "react-router-dom";
+import { BrowserRouter, Route, Router, Routes, useNavigate } from "react-router-dom";
 function LoginComponent() {
   const [username, setUsername] = useState("user");
   const [password, setPassword] = useState("");
@@ -19,7 +19,7 @@ function LoginComponent() {
       console.log("Thanh cong");
       setShowSuccessMessage(true);
       setShowErrorMessage(false);
-      navigate(`/welcome/${username}`);
+      navigate('/welcome');
     } else {
       console.log("That bai");
       setShowErrorMessage(false);
@@ -78,18 +78,15 @@ function LoginComponent() {
   );
 }
 function WelcomeComponent() {
-  const {username} = useParams();
-  console.log(username);
   return (
     <div className="WelcomeComponent">
-    <h1>Welcome {username}</h1>
   <div>Welcome Component</div>
   </div>
   );
 }
 function ErrorComponent() {
   return <div className="ErrorComponent">
-    <h1>We are working really hard</h1>
+    <h1>We are workng really hard</h1>
     <div>
       Apologies for the 404. Reach out to me!!!
     </div>
@@ -102,7 +99,7 @@ const TodoApp = () => {
         <Routes>
         <Route path="/" element={<LoginComponent></LoginComponent>}></Route>
           <Route path="/login" element = {<LoginComponent></LoginComponent>}></Route>
-          <Route path="/welcome/:username" element = {<WelcomeComponent></WelcomeComponent>}></Route>
+          <Route path="/welcome" element = {<WelcomeComponent></WelcomeComponent>}></Route>
           <Route path="*" element = {<ErrorComponent></ErrorComponent>}></Route>
         </Routes>
       </BrowserRouter>

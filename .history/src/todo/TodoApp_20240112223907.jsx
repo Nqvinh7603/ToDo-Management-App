@@ -19,7 +19,7 @@ function LoginComponent() {
       console.log("Thanh cong");
       setShowSuccessMessage(true);
       setShowErrorMessage(false);
-      navigate(`/welcome/${username}`);
+      navigate('/welcome/todo-app');
     } else {
       console.log("That bai");
       setShowErrorMessage(false);
@@ -78,11 +78,11 @@ function LoginComponent() {
   );
 }
 function WelcomeComponent() {
-  const {username} = useParams();
-  console.log(username);
+  const params = useParams();
+  console.log(params.username);
   return (
     <div className="WelcomeComponent">
-    <h1>Welcome {username}</h1>
+    <h1>Welcome Todo App</h1>
   <div>Welcome Component</div>
   </div>
   );

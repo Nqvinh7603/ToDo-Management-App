@@ -19,7 +19,7 @@ function LoginComponent() {
       console.log("Thanh cong");
       setShowSuccessMessage(true);
       setShowErrorMessage(false);
-      navigate(`/welcome/${username}`);
+      navigate('/welcome/${username}');
     } else {
       console.log("That bai");
       setShowErrorMessage(false);
