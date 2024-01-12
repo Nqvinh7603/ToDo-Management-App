@@ -31,7 +31,7 @@ function LoginComponent(){
         return null;
     } 
     function ErrorMessageComponent(){
-        if(showErrorMessage){
+        if(showSuccessMessage){
             return (
                 <div className='errorMessage'>Đăng nhập thất bại</div>
             )

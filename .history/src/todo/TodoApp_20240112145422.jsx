@@ -3,8 +3,6 @@ import"./TodoApp.css";
 function LoginComponent(){
     const [username, setUsername]= useState('user');
     const [password, setPassword]=  useState('');
-    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-    const [showErrorMessage, setShowErrorMessage] = useState(true);
     function handleUsernameChange(event){
         setUsername(event.target.value);
     }
@@ -14,34 +12,14 @@ function LoginComponent(){
     function handleSubmit(){
         if(username === 'user' && password === '123' ){
             console.log("Thanh cong");
-            setShowSuccessMessage(true);
-            setShowErrorMessage(false);
         }else{
             console.log("That bai");
-            setShowErrorMessage(true);
-            setShowErrorMessage(false);
         }
     }
-    function SuccessMessageComponent(){
-        if(showSuccessMessage){
-            return (
-                <div className='successMessage'>Đăng nhập thành công</div>
-            )
-        }
-        return null;
-    } 
-    function ErrorMessageComponent(){
-        if(showErrorMessage){
-            return (
-                <div className='errorMessage'>Đăng nhập thất bại</div>
-            )
-        }
-        return null;
-    } 
     return(
         <div className='Login'>
-        <SuccessMessageComponent></SuccessMessageComponent>
-        <ErrorMessageComponent></ErrorMessageComponent>
+        <div className='successMessage'>Đăng nhập thành công</div>
+        <div className='errorMessage'>Đăng nhập thất bại</div>
             <div className='LoginForm'>
             <div>
                 <label>
