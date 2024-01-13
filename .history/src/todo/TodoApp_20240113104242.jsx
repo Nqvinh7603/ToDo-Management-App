@@ -134,10 +134,10 @@ function ListTodosComponent() {
     { id: 3, description: "Learn SQL", done: false, targetDate: targetDate },
   ];
   return (
-    <div className="container">
+    <div className="ListTodosComponents">
       <h1>Việc cần làm</h1>
       <div>
-        <table className="table">
+        <table>
           <thead>
             <tr>
               <td>STT</td>

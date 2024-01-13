@@ -137,7 +137,7 @@ function ListTodosComponent() {
     <div className="container">
       <h1>Việc cần làm</h1>
       <div>
-        <table className="table">
+        <table>
           <thead>
             <tr>
               <td>STT</td>

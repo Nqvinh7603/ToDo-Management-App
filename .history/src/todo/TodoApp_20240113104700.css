@@ -5,7 +5,9 @@ label, input, button{
     flex-wrap: wrap;
     justify-content: space-between; */
 }
-
+input{
+    display: flex;
+}
 footer {
     bottom: 0;
     position: absolute;
