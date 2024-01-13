@@ -113,7 +113,7 @@ function HeaderComponent() {
 function FooterComponent() {
   return (
     <div className="footer">
-       <hr></hr> Footer
+       <hr/> Footer
     </div>
   );
 }
