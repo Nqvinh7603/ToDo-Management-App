@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./TodoApp.css";
 import {
   BrowserRouter,
-  Link,
   Route,
   Router,
   Routes,
@@ -30,7 +29,7 @@ function LoginComponent() {
       navigate(`/welcome/${username}`);
     } else {
       console.log("That bai");
-      setShowSuccessMessage(false);
+      setShowErrorMessage(false);
       setShowErrorMessage(true);
     }
   }
@@ -91,7 +90,7 @@ function WelcomeComponent() {
   return (
     <div className="WelcomeComponent">
       <h1>Welcome {username}</h1>
-      <div>Quản lý việc cần làm của bạn - <Link to="/todos">Đến đây</Link></div>
+      <div>Welcome Component</div>
     </div>
   );
 }
@@ -108,8 +107,8 @@ function ListTodosComponent() {
   const targetDate = new Date(today.getFullYear()+ 12, today.getMonth(), today.getDay());
   const todos = [
     { id: 1, description: "Learn Java", done: false, targetDate: targetDate },
-    { id: 2, description: "Learn Itels", done: false, targetDate:targetDate },
-    { id: 3, description: "Learn SQL", done: false, targetDate: targetDate },
+    { id: 2, description: "Learn Itels" },
+    { id: 3, description: "Learn SQL" },
   ];
   return (
     <div className="ListTodosComponents">
@@ -118,10 +117,8 @@ function ListTodosComponent() {
         <table>
           <thead>
             <tr>
-              <td>STT</td>
-              <td>Mô tả</td>
-              <td>Đã hoàn thành</td>
-              <td>Deadline</td>
+              <td>id</td>
+              <td>description</td>
             </tr>
           </thead>
           <tbody>
@@ -130,8 +127,6 @@ function ListTodosComponent() {
               <tr key={todo.id}>
                 <td>{todo.id}</td>
                 <td>{todo.description}</td>
-                <td>{todo.done.toString()}</td>
-                <td>{todo.targetDate.toDateString()}</td>
               </tr>
             ))}
           </tbody>

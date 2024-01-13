@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./TodoApp.css";
 import {
   BrowserRouter,
-  Link,
   Route,
   Router,
   Routes,
@@ -30,7 +29,7 @@ function LoginComponent() {
       navigate(`/welcome/${username}`);
     } else {
       console.log("That bai");
-      setShowSuccessMessage(false);
+      setShowErrorMessage(false);
       setShowErrorMessage(true);
     }
   }
@@ -91,7 +90,7 @@ function WelcomeComponent() {
   return (
     <div className="WelcomeComponent">
       <h1>Welcome {username}</h1>
-      <div>Quản lý việc cần làm của bạn - <Link to="/todos">Đến đây</Link></div>
+      <div>Welcome Component</div>
     </div>
   );
 }
@@ -104,36 +103,34 @@ function ErrorComponent() {
   );
 }
 function ListTodosComponent() {
-  const today= new Date();
-  const targetDate = new Date(today.getFullYear()+ 12, today.getMonth(), today.getDay());
   const todos = [
-    { id: 1, description: "Learn Java", done: false, targetDate: targetDate },
-    { id: 2, description: "Learn Itels", done: false, targetDate:targetDate },
-    { id: 3, description: "Learn SQL", done: false, targetDate: targetDate },
+    { id: 1, description: "Learn Java" },
+    { id: 2, description: "Learn Itels" },
+    { id: 3, description: "Learn SQL" },
   ];
   return (
     <div className="ListTodosComponents">
-      <h1>Việc cần làm</h1>
+      <h1>Việc bạn cần làm</h1>
       <div>
         <table>
           <thead>
             <tr>
-              <td>STT</td>
-              <td>Mô tả</td>
-              <td>Đã hoàn thành</td>
-              <td>Deadline</td>
+              <td>id</td>
+              <td>description</td>
             </tr>
           </thead>
           <tbody>
-            {todos.map((todo) => (
-              // eslint-disable-next-line react/jsx-key
-              <tr key={todo.id}>
-                <td>{todo.id}</td>
-                <td>{todo.description}</td>
-                <td>{todo.done.toString()}</td>
-                <td>{todo.targetDate.toDateString()}</td>
-              </tr>
-            ))}
+          {
+            todos.map(
+              todo =>(
+                <tr>
+              <td>{todos.id}</td>
+              <td>{todos.description}</td>
+            </tr>
+              )
+            )
+          }
+            
           </tbody>
         </table>
       </div>

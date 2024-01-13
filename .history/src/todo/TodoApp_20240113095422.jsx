@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./TodoApp.css";
 import {
   BrowserRouter,
-  Link,
   Route,
   Router,
   Routes,
@@ -91,7 +90,7 @@ function WelcomeComponent() {
   return (
     <div className="WelcomeComponent">
       <h1>Welcome {username}</h1>
-      <div>Quản lý việc cần làm của bạn - <Link to="/todos">Đến đây</Link></div>
+      <div>Việc cần làm của bạn. <a href=""></a>Go hea</div>
     </div>
   );
 }
