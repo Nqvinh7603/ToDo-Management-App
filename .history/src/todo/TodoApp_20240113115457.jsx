@@ -8,12 +8,11 @@ import HeaderComponent from "./component/HeaderComponent";
 import ErrorComponent from "./component/ErrorComponent";
 import WelcomeComponent from "./component/WelcomeComponent";
 import LoginComponent from "./component/LoginComponent";
-import AuthProvider from "./security/AuthContext";
-//import AuthProvider, { useAuth } from './security/AuthContext'
+
 const TodoApp = () => {
   return (
     <div className="TodoApp">
-    <AuthProvider>
+    <AuthProvider/>
       <BrowserRouter>
         <HeaderComponent />
         <Routes>
@@ -24,9 +23,8 @@ const TodoApp = () => {
           <Route path="/logout" element={<LogoutComponent />} />
           <Route path="*" element={<ErrorComponent />} />
         </Routes>
-        
+        <FooterComponent />
       </BrowserRouter>
-      </AuthProvider>
     </div>
   );
 };

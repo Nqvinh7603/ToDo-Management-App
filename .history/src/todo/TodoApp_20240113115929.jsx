@@ -24,7 +24,7 @@ const TodoApp = () => {
           <Route path="/logout" element={<LogoutComponent />} />
           <Route path="*" element={<ErrorComponent />} />
         </Routes>
-        
+        <FooterComponent />
       </BrowserRouter>
       </AuthProvider>
     </div>

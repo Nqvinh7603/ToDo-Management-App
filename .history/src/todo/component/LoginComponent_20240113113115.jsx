@@ -51,7 +51,7 @@ const LoginComponent = () => {
       )}
       <div className="LoginForm">
         <div>
-          <label>Đăng nhập</label>
+          <label>Tên đăng nhập</label>
           <input
             type="text"
             name="username"

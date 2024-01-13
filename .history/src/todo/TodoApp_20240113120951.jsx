@@ -26,6 +26,7 @@ const TodoApp = () => {
         </Routes>
         
       </BrowserRouter>
+      <FooterComponent />
       </AuthProvider>
     </div>
   );
