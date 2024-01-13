@@ -91,9 +91,7 @@ function WelcomeComponent() {
   return (
     <div className="WelcomeComponent">
       <h1>Welcome {username}</h1>
-      <div>
-        Quản lý việc cần làm của bạn - <Link to="/todos">Đến đây</Link>
-      </div>
+      <div>Quản lý việc cần làm của bạn - <Link to="/todos">Đến đây</Link></div>
     </div>
   );
 }
@@ -107,32 +105,20 @@ function ErrorComponent() {
 }
 function HeaderComponent() {
   return (
-    <header className="border-bottom border-light border-5 mb-5 p-2">
+    <header className="header">
     <div className="container">
-        <div className="row">
-            <nav className="navbar navbar-expand-lg">
-                <a className="navbar-brand ms-2 fs-2 fw-bold text-black" href="https://github.com/Nqvinh7603">Todo-App</a>
-                <div className="collapse navbar-collapse">
-                    <ul className="navbar-nav">
-                        <li className="nav-item fs-5"><Link className="nav-link" to="/welcome/user">Trang chủ</Link></li>
-                        <li className="nav-item fs-5"><Link className="nav-link" to="/todos">Việc cần làm</Link></li>
-                    </ul>
-                </div>
-                <ul className="navbar-nav">
-                    <li className="nav-item fs-5"><Link className="nav-link" to="/login">Đăng nhập</Link></li>
-                    <li className="nav-item fs-5"><Link className="nav-link" to="/logout">Đăng xuất</Link></li>
-                </ul>
-            </nav>
-        </div>
+    <ul>
+    <a href="https://github.com/Nqvinh7603">TodoApp</a>
+    </ul>
     </div>
-</header>
-
+      
+    </header>
   );
 }
 function FooterComponent() {
   return (
     <footer className="footer">
-      <div className="container">Footer</div>
+    <div className="container">Footer</div>
     </footer>
   );
 }
@@ -145,15 +131,11 @@ function LogoutComponent() {
   );
 }
 function ListTodosComponent() {
-  const today = new Date();
-  const targetDate = new Date(
-    today.getFullYear() + 12,
-    today.getMonth(),
-    today.getDay()
-  );
+  const today= new Date();
+  const targetDate = new Date(today.getFullYear()+ 12, today.getMonth(), today.getDay());
   const todos = [
     { id: 1, description: "Learn Java", done: false, targetDate: targetDate },
-    { id: 2, description: "Learn Itels", done: false, targetDate: targetDate },
+    { id: 2, description: "Learn Itels", done: false, targetDate:targetDate },
     { id: 3, description: "Learn SQL", done: false, targetDate: targetDate },
   ];
   return (
@@ -188,18 +170,27 @@ function ListTodosComponent() {
 const TodoApp = () => {
   return (
     <div className="TodoApp">
+    <HeaderComponent/>
       <BrowserRouter>
-        <HeaderComponent />
         <Routes>
-          <Route path="/" element={<LoginComponent />} />
-          <Route path="/login" element={<LoginComponent />} />
-          <Route path="/welcome/:username" element={<WelcomeComponent />} />
-          <Route path="/todos" element={<ListTodosComponent />} />
-          <Route path="/logout" element={<LogoutComponent />} />
-          <Route path="*" element={<ErrorComponent />} />
+          <Route path="/" element={<LoginComponent/>} />
+          <Route path="/login" element={<LoginComponent/>} />
+          <Route
+            path="/welcome/:username"
+            element={<WelcomeComponent/>}
+          />
+          <Route
+            path="/todos"
+            element={<ListTodosComponent/>}
+          />
+          <Route
+            path="/logout"
+            element={<LogoutComponent/>}
+          />
+          <Route path="*" element={<ErrorComponent/>} />
         </Routes>
-        <FooterComponent />
       </BrowserRouter>
+      <FooterComponent/>
     </div>
   );
 };
