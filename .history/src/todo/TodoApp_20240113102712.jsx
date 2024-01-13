@@ -119,9 +119,9 @@ function FooterComponent() {
 }
 function LogoutComponent() {
   return (
-    <div className="LogoutComponent">
-      <h1>Bạn đã đăng xuất!!!</h1>
-      <div>Cảm ơn bạn đã sử dụng App.</div>
+    <div className="ErrorComponent">
+      <h1>We are working really hard</h1>
+      <div>Apologies for the 404. Reach out to me!!!</div>
     </div>
   );
 }
@@ -177,10 +177,6 @@ const TodoApp = () => {
           <Route
             path="/todos"
             element={<ListTodosComponent/>}
-          />
-          <Route
-            path="/logout"
-            element={<LogoutComponent/>}
           />
           <Route path="*" element={<ErrorComponent/>} />
         </Routes>

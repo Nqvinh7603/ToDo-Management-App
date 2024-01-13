@@ -179,7 +179,7 @@ const TodoApp = () => {
             element={<ListTodosComponent/>}
           />
           <Route
-            path="/logout"
+            path="/todos"
             element={<LogoutComponent/>}
           />
           <Route path="*" element={<ErrorComponent/>} />

@@ -113,15 +113,7 @@ function HeaderComponent() {
 function FooterComponent() {
   return (
     <div className="footer">
-       <hr/> Footer
-    </div>
-  );
-}
-function LogoutComponent() {
-  return (
-    <div className="LogoutComponent">
-      <h1>Bạn đã đăng xuất!!!</h1>
-      <div>Cảm ơn bạn đã sử dụng App.</div>
+      Footer <hr/>
     </div>
   );
 }
@@ -165,7 +157,7 @@ function ListTodosComponent() {
 const TodoApp = () => {
   return (
     <div className="TodoApp">
-    <HeaderComponent/>
+    <HeaderComponent></HeaderComponent>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LoginComponent/>} />
@@ -176,16 +168,12 @@ const TodoApp = () => {
           />
           <Route
             path="/todos"
-            element={<ListTodosComponent/>}
-          />
-          <Route
-            path="/logout"
-            element={<LogoutComponent/>}
+            element={<ListTodosComponent/>>}
           />
           <Route path="*" element={<ErrorComponent/>} />
         </Routes>
       </BrowserRouter>
-      <FooterComponent/>
+      <FooterComponent></FooterComponent>
     </div>
   );
 };
