@@ -16,10 +16,17 @@ const LoginComponent = () => {
     setPassword(event.target.value);
   }
   function handleSubmit() {
-     if (authContext.login(username, password)) {
+     if () {
+      authContext.setAuthenticated(true);
+      console.log("Thanh cong");
+      setShowSuccessMessage(true);
+      setShowErrorMessage(false);
       navigate(`/welcome/${username}`);
        
     } else {
+      authContext.setAuthenticated(false);
+      console.log("That bai");
+      setShowSuccessMessage(false);
       setShowErrorMessage(true);
     }
   }

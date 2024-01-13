@@ -9,9 +9,7 @@ import ErrorComponent from "./component/ErrorComponent";
 import WelcomeComponent from "./component/WelcomeComponent";
 import LoginComponent from "./component/LoginComponent";
 import AuthProvider from "./security/AuthContext";
-function AuthencicateRoute(){
-  
-}
+
 const TodoApp = () => {
   return (
     <div className="TodoApp">

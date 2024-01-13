@@ -4,6 +4,7 @@ import { Navigate } from "react-router-dom";
 export const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 export default function AuthProvider({ children }) {
+  const [number, setNumber] = useState(10);
   const [isAuthenticated, setAuthenticated] = useState(false);
   function login(username, password){
     if (username === "user" && password === "123") {
@@ -18,7 +19,7 @@ export default function AuthProvider({ children }) {
     setAuthenticated(false);
   }
   return (
-    <AuthContext.Provider value={ {isAuthenticated, login, logout}}>
+    <AuthContext.Provider value={ {number, isAuthenticated login, logout}}>
       {children}
     </AuthContext.Provider>
   );

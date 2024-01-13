@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../security/AuthContext";
 
 const HeaderComponent = () => {
+  //const authContext = useContext(AuthContext);
   const authContext = useAuth();
   const isAuthenticated = authContext.isAuthenticated;
-  function logout(){
-    authContext.logout(); 
-  }
+  //console.log(authContext);
+  //console.log(authContext.number);
+  function 
   return (
     <header className="border-bottom border-light border-5 mb-5 p-2">
       <div className="container">
@@ -42,7 +43,7 @@ const HeaderComponent = () => {
               {!isAuthenticated && <Link className="nav-link" to="/login">Đăng nhập</Link> }
               </li>
               <li className="nav-item fs-5">
-              {isAuthenticated && <Link className="nav-link" to="/logout" onClick={logout}>Đăng xuất</Link> }
+              {isAuthenticated && <Link className="nav-link" to="/logout" onClick={}>Đăng xuất</Link> }
               </li>
             </ul>
           </nav>

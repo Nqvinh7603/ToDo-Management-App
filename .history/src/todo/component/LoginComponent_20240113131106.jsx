@@ -17,9 +17,12 @@ const LoginComponent = () => {
   }
   function handleSubmit() {
      if (authContext.login(username, password)) {
+      setShowSuccessMessage(true);
+      setShowErrorMessage(false);
       navigate(`/welcome/${username}`);
        
     } else {
+      setShowSuccessMessage(false);
       setShowErrorMessage(true);
     }
   }

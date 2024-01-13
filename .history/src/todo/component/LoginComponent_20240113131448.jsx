@@ -20,7 +20,7 @@ const LoginComponent = () => {
       navigate(`/welcome/${username}`);
        
     } else {
-      setShowErrorMessage(true);
+      setShowSuccessMessage(false);
     }
   }
   function SuccessMessageComponent() {
