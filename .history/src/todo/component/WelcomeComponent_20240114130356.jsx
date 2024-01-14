@@ -25,7 +25,7 @@ const WelcomeComponent = () => {
     }
     function successfulResponse(response){
         console.log(response);
-        setMessage(response.data.message)
+        setMessage(response.data)
     }
     function errorResponse(error){
       console.log(error);

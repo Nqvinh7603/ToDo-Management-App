@@ -7,13 +7,13 @@ const WelcomeComponent = () => {
     const [message, setMessage] = useState(null);
     function callHelloWorldRestApi(){
       console.log("Called");
-      // axios.get('http://localhost:8080/hello-world').then(
-      //   (response) => successfulResponse(response)
-      // ).catch(
-      //   (error) => errorResponse(error)
-      // ).finally(
-      //   () => console.log("Clean up")
-      // )
+      axios.get('http://localhost:8080/hello-world').then(
+        (response) => successfulResponse(response)
+      ).catch(
+        (error) => errorResponse(error)
+      ).finally(
+        () => console.log("Clean up")
+      )
 
       axios.get('http://localhost:8080/hello-world-bean').then(
         (response) => successfulResponse(response)
@@ -25,7 +25,7 @@ const WelcomeComponent = () => {
     }
     function successfulResponse(response){
         console.log(response);
-        setMessage(response.data.message)
+        setMessage(response.data)
     }
     function errorResponse(error){
       console.log(error);

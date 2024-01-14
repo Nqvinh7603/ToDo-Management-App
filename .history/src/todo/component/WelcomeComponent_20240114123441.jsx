@@ -1,31 +1,19 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 const WelcomeComponent = () => {
     const { username } = useParams();
-    const [message, setMessage] = useState(null);
     function callHelloWorldRestApi(){
       console.log("Called");
-      // axios.get('http://localhost:8080/hello-world').then(
-      //   (response) => successfulResponse(response)
-      // ).catch(
-      //   (error) => errorResponse(error)
-      // ).finally(
-      //   () => console.log("Clean up")
-      // )
-
-      axios.get('http://localhost:8080/hello-world-bean').then(
+      axios.get('http://localhost:8080/hello-world').then(
         (response) => successfulResponse(response)
       ).catch(
         (error) => errorResponse(error)
-      ).finally(
-        () => console.log("Clean up")
       )
     }
     function successfulResponse(response){
         console.log(response);
-        setMessage(response.data.message)
     }
     function errorResponse(error){
       console.log(error);
@@ -39,7 +27,6 @@ const WelcomeComponent = () => {
       <div>
         <button className='btn btn-success m-5' onClick={callHelloWorldRestApi}>Call HelloWorld Rest Api</button>
       </div>
-      <div className='text-info'>{message}</div>
     </div>
   );
 };
