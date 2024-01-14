@@ -18,6 +18,7 @@ const ListTodosComponent = () => {
   function refreshTodos() {
     retrieveAllTodosForUsername("vinh")
       .then((response) => {
+        console.log(response.data);
         setTodos(response.data)
       })
       .catch((error) => console.log(error));

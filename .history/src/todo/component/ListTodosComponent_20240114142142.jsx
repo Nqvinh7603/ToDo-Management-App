@@ -14,10 +14,11 @@ const ListTodosComponent = () => {
   //   // { id: 2, description: "Learn Itels", done: false, targetDate: targetDate },
   //   // { id: 3, description: "Learn SQL", done: false, targetDate: targetDate },
   // ];
-  useEffect(() => refreshTodos(), []);
+  useEffect(() => refreshTodos());
   function refreshTodos() {
     retrieveAllTodosForUsername("vinh")
       .then((response) => {
+        console.log(response.data);
         setTodos(response.data)
       })
       .catch((error) => console.log(error));
