@@ -19,9 +19,6 @@ export default function TodoComponent() {
       })
       .catch((error) => console.log(error));
   }
-  function onSubmit(values){
-    console.log(values);
-  }
   return (
     <div className="container">
       <h1>Nhập việc cần làm</h1>

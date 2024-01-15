@@ -19,16 +19,12 @@ export default function TodoComponent() {
       })
       .catch((error) => console.log(error));
   }
-  function onSubmit(values){
-    console.log(values);
-  }
   return (
     <div className="container">
       <h1>Nhập việc cần làm</h1>
       <div>
         <Formik initialValues={{description, targetDate}}
         enableReinitialize={true}
-        onSubmit={onSubmit}
         >
         {
           (props) => (
@@ -42,7 +38,7 @@ export default function TodoComponent() {
               <Field type="date" className="form-control" name ="targetDate"/>
             </fieldset>
             <div>
-              <button className="btn btn-success m-5" type="submit">Lưu</button>
+              
             </div>
             </Form>
             )
