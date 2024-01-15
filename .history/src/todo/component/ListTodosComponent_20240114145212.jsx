@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { deleteTodoApi, retrieveAllTodosForUsernameApi } from "../api/TodoApiService";
-import { useAuth } from "../security/AuthContext";
 
 const ListTodosComponent = () => {
   const today = new Date();
-  const authContext = useAuth()
-  const username = authContext.username
   const targetDate = new Date(
     today.getFullYear() + 12,
     today.getMonth(),
@@ -16,7 +13,7 @@ const ListTodosComponent = () => {
   
   useEffect(() => refreshTodos(), []);
   function refreshTodos() {
-    retrieveAllTodosForUsernameApi(username)
+    retrieveAllTodosForUsernameApi("vinh")
       .then((response) => {
         setTodos(response.data)
       })
@@ -24,7 +21,7 @@ const ListTodosComponent = () => {
   }
   function deleteTodo(id){
     console.log("Clicked"+ id );
-    deleteTodoApi(username, id).then(
+    deleteTodoApi("vinh", id).then(
       () => {
         setMessage(`Đã xóa công việc có id = ${id} thành công`);
         refreshTodos()

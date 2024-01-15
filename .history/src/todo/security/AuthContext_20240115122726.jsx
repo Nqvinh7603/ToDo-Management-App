@@ -13,7 +13,6 @@ export default function AuthProvider({ children }) {
          return true;
       } else {
         setAuthenticated(false);
-        setUsername(null);
         return false; 
       }
   }

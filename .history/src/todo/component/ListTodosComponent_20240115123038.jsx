@@ -24,7 +24,7 @@ const ListTodosComponent = () => {
   }
   function deleteTodo(id){
     console.log("Clicked"+ id );
-    deleteTodoApi(username, id).then(
+    deleteTodoApi("vinh", id).then(
       () => {
         setMessage(`Đã xóa công việc có id = ${id} thành công`);
         refreshTodos()

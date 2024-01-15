@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { deleteTodoApi, retrieveAllTodosForUsernameApi } from "../api/TodoApiService";
-import { useAuth } from "../security/AuthContext";
+import { deleteTodoApi, retrieveAllTodosForUsername } from "../api/TodoApiService";
 
 const ListTodosComponent = () => {
   const today = new Date();
-  const authContext = useAuth()
-  const username = authContext.username
   const targetDate = new Date(
     today.getFullYear() + 12,
     today.getMonth(),
@@ -16,7 +13,7 @@ const ListTodosComponent = () => {
   
   useEffect(() => refreshTodos(), []);
   function refreshTodos() {
-    retrieveAllTodosForUsernameApi(username)
+    retrieveAllTodosForUsernameApi("vinh")
       .then((response) => {
         setTodos(response.data)
       })
@@ -24,9 +21,8 @@ const ListTodosComponent = () => {
   }
   function deleteTodo(id){
     console.log("Clicked"+ id );
-    deleteTodoApi(username, id).then(
+    deleteTodoApi("vinh", id).then(
       () => {
-        setMessage(`Đã xóa công việc có id = ${id} thành công`);
         refreshTodos()
       }
     ).catch(error => console.log(error));
@@ -34,7 +30,7 @@ const ListTodosComponent = () => {
   return (
     <div className="container">
       <h1>Việc cần làm</h1>
-      {message && <div className="alert alert-warning">{message}</div> }
+      <div>{message}</div>
       <div>
         <table className="table">
           <thead>
@@ -54,7 +50,7 @@ const ListTodosComponent = () => {
                 <td>{todo.description}</td>
                 <td>{todo.done.toString()}</td>
                 <td>{todo.targetDate.toString()}</td>
-                <td><button className="btn btn-warning" onClick={() => deleteTodo(todo.id)}>Xoá </button></td>
+                <td><button className="btn btn-warning" onClick={() => deleteTodo{todo.id}}>Xoá </button></td>
               </tr>
             ))}
           </tbody>
