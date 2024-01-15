@@ -24,15 +24,9 @@ export default function TodoComponent() {
   }
   function validate(values) {
     let errors = {
-      // description: "Nhập mô tả công việc hợp lệ",
-      // targetDate: "Nhập ngày deadline hợp lệ"
+      description: "Thay đổi dung công việc",
     };
-    if(values.description.length < 5){
-      errors.description = "Nhập ít nhất 5 ký tự"
-    }
-    if(values.targetDate == null ){
-      errors.description = "Nhập đúng định dạng ngày"
-    }
+
     console.log(values);
     return errors;
   }
@@ -45,19 +39,11 @@ export default function TodoComponent() {
           enableReinitialize={true}
           onSubmit={onSubmit}
           validate={validate}
-          validateOnChange= {false}
-          validateOnBlur={false}
-
         >
           {(props) => (
             <Form>
               <ErrorMessage
                 name="description"
-                component="div"
-                className="alert alert-warning"
-              />
-              <ErrorMessage
-                name="targetDate"
                 component="div"
                 className="alert alert-warning"
               />

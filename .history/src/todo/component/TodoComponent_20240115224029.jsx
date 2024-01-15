@@ -31,7 +31,7 @@ export default function TodoComponent() {
       errors.description = "Nhập ít nhất 5 ký tự"
     }
     if(values.targetDate == null ){
-      errors.description = "Nhập đúng định dạng ngày"
+      errors.description = "Nhập ít nhất 5 ký tự"
     }
     console.log(values);
     return errors;
