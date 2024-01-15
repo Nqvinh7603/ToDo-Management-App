@@ -41,15 +41,6 @@ const TodoApp = () => {
               }
             />
             <Route
-              path="/todo/:id"
-              element={
-                <AuthencicateRoute>
-                  {" "}
-                  <TodoComponent />
-                </AuthencicateRoute>
-              }
-            />
-            <Route
               path="/logout"
               element={
                 <AuthencicateRoute>

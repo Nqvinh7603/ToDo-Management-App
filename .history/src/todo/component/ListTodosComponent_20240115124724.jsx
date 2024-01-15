@@ -4,14 +4,11 @@ import {
   retrieveAllTodosForUsernameApi,
 } from "../api/TodoApiService";
 import { useAuth } from "../security/AuthContext";
-import { useNavigate } from "react-router-dom";
 
 const ListTodosComponent = () => {
   const today = new Date();
   const authContext = useAuth();
   const username = authContext.username;
-  const naviagte = useNavigate();
-  
   const targetDate = new Date(
     today.getFullYear() + 12,
     today.getMonth(),
@@ -39,7 +36,6 @@ const ListTodosComponent = () => {
   }
   function updateTodo(id) {
     console.log("Clicked" + id);
-    naviagte(`/todo/${id}`)
   }
   return (
     <div className="container">

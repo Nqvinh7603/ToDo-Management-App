@@ -8,7 +8,6 @@ import ErrorComponent from "./component/ErrorComponent";
 import WelcomeComponent from "./component/WelcomeComponent";
 import LoginComponent from "./component/LoginComponent";
 import AuthProvider, { useAuth } from "./security/AuthContext";
-import TodoComponent from "./component/TodoComponent";
 function AuthencicateRoute({ children }) {
   const authContext = useAuth();
   if (authContext.isAuthenticated) return children;
@@ -45,11 +44,13 @@ const TodoApp = () => {
               element={
                 <AuthencicateRoute>
                   {" "}
-                  <TodoComponent />
+                  <ListTodosComponent />
                 </AuthencicateRoute>
               }
             />
             <Route
+            <Route
+
               path="/logout"
               element={
                 <AuthencicateRoute>

@@ -32,20 +32,20 @@ const TodoApp = () => {
               }
             />
             <Route
-              path="/todos"
-              element={
-                <AuthencicateRoute>
-                  {" "}
-                  <ListTodosComponent />
-                </AuthencicateRoute>
-              }
-            />
-            <Route
               path="/todo/:id"
               element={
                 <AuthencicateRoute>
                   {" "}
                   <TodoComponent />
+                </AuthencicateRoute>
+              }
+            />
+            <Route
+              path="/todos"
+              element={
+                <AuthencicateRoute>
+                  {" "}
+                  <ListTodosComponent />
                 </AuthencicateRoute>
               }
             />
