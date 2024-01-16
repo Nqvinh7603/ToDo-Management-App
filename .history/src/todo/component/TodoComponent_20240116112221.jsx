@@ -54,7 +54,7 @@ export default function TodoComponent() {
     if (values.description.length < 5) {
       errors.description = "Nhập ít nhất 5 ký tự";
     }
-    if (values.targetDate == null || values.targetDate == '' || moment(values.targetDate).isValid()) {
+    if (values.targetDate == null || values.targetDate == '' || moment(values.targetDate).isValid) {
       errors.description = "Nhập deadline";
     }
     console.log(values);

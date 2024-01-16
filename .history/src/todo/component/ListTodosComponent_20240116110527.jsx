@@ -41,9 +41,6 @@ const ListTodosComponent = () => {
     console.log("Clicked" + id);
     naviagte(`/todo/${id}`)
   }
-  function addNewTodo() {
-    naviagte(`/todo/-1`)
-  }
   return (
     <div className="container">
       <h1>Việc cần làm</h1>

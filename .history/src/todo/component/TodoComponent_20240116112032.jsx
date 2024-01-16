@@ -3,7 +3,6 @@ import { createTodoApi, retrieveTodoApi, updateTodoApi } from "../api/TodoApiSer
 import { useAuth } from "../security/AuthContext";
 import { useEffect, useState } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import moment from "moment";
 
 export default function TodoComponent() {
   const { id } = useParams();
@@ -54,7 +53,7 @@ export default function TodoComponent() {
     if (values.description.length < 5) {
       errors.description = "Nhập ít nhất 5 ký tự";
     }
-    if (values.targetDate == null || values.targetDate == '' || moment(values.targetDate).isValid()) {
+    if (values.targetDate == null || values.targetDate == '   ') {
       errors.description = "Nhập deadline";
     }
     console.log(values);

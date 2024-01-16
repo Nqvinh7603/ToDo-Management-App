@@ -1,9 +1,8 @@
 import { Navigate, useNavigate, useParams } from "react-router-dom";
-import { createTodoApi, retrieveTodoApi, updateTodoApi } from "../api/TodoApiService";
+import { retrieveTodoApi, updateTodoApi } from "../api/TodoApiService";
 import { useAuth } from "../security/AuthContext";
 import { useEffect, useState } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import moment from "moment";
 
 export default function TodoComponent() {
   const { id } = useParams();
@@ -32,19 +31,12 @@ export default function TodoComponent() {
       targetDate: values.targetDate,
       done: false,
     };
-    if(id == -1){
-      createTodoApi(username,todo)
-      .then((response) => {
-        navigate("/todos");
-      })
-      .catch((error) => console.log(error));
-  }else{
+    if(id == -1)
     updateTodoApi(username, id, todo)
       .then((response) => {
         navigate("/todos");
       })
       .catch((error) => console.log(error));
-    }
   }
   function validate(values) {
     let errors = {
@@ -54,7 +46,7 @@ export default function TodoComponent() {
     if (values.description.length < 5) {
       errors.description = "Nhập ít nhất 5 ký tự";
     }
-    if (values.targetDate == null || values.targetDate == '' || moment(values.targetDate).isValid()) {
+    if (values.targetDate == null || values.targetDate == '   ') {
       errors.description = "Nhập deadline";
     }
     console.log(values);

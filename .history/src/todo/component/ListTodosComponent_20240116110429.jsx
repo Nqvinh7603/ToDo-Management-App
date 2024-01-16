@@ -41,9 +41,6 @@ const ListTodosComponent = () => {
     console.log("Clicked" + id);
     naviagte(`/todo/${id}`)
   }
-  function addNewTodo() {
-    naviagte(`/todo/-1`)
-  }
   return (
     <div className="container">
       <h1>Việc cần làm</h1>
@@ -90,7 +87,7 @@ const ListTodosComponent = () => {
           </tbody>
         </table>
       </div>
-      <div className="btn btn-success m-4" onClick={addNewTodo}>Thêm mới</div>
+      <div className="btn btn-success">Thêm mới</div>
     </div>
   );
 };
